@@ -3,7 +3,7 @@ layout: post
 title: 'My Blog'
 subtitle: '欢迎来到我的博客'
 date: 2017-02-23
-cover: 'https://ws4.sinaimg.cn/large/006tNc79gy1flwh76p0m6j30yg0mymyj.jpg'
+cover: 'https://ws3.sinaimg.cn/large/006tNc79gy1flwzowcyp4j31180iu40b.jpg'
 tags: jekyll
 catalog: true
 ---
