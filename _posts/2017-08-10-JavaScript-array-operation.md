@@ -129,6 +129,10 @@ const kvArr = [
 kvArr.map(item => {return item.key}).join(',')
 //1,1,1,2,3,4
 ```
+
+### reduce
+`从左到右为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。`
+
 ---
 ### 数组去重
 
@@ -144,7 +148,7 @@ Array.from(new Set(kvArr.map(item => item.key)))
 ```
 * 第二种方法
 
-```javascript
+```jsx
 // 定义一个空数组 let ret = []
 // include判断是否包含元素
 // push 如果不包含,则push到ret
@@ -163,6 +167,25 @@ ret.map(a => {
           return console.log(222)
     }
 })
+```
+
+### 数组求和
+* 这里要先明白一点
+> JavaScript数组方法是特意定义为通用的，因此他们不仅应用在真正的数组,而且在类数组(包括String)对象上也能正确工作，
+但是类数组对🐘无法继承自Array.prototype,所以可以通过Function.call间接地调用。
+
+```js
+// arguments对象 包含传递给函数的每个参数
+// call的第一个参数表示真正调用reduce的环境变为了arguments对象
+// 也就是reduce方法中的this是指向arguments的。所以就好像arguments也具有了数组的方法。
+// 能调用call的只有方法，所以不能用[].call这种形式，得用[].reduce.call
+function sum(){
+    return [].reduce.call(arguments,function(x,b){
+         return (x|0)+(b|0);
+    })
+}
+sum(1, true, 'a', 'D', 1, 'F', 1, 'w')
+// 4
 ```
 
 
