@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '高阶函数'
-subtitle: '项目中一直在用React-Redux,抽空整理一下'
+subtitle: '高阶函数了解一下'
 date: 2018-03-10
 categories: Javascript
 tags: React Javascript
