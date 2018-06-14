@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'JavaScript中数组的操作'
-subtitle: '整理一下敲一敲常用的数组的操作'
+title: 'JavaScript中常用的的方法'
+subtitle: '整理一下敲一敲常用的js方法'
 date: 2017-08-10
 tags: JavaScript
 catalog: true
@@ -98,7 +98,7 @@ kvArr.forEach(item => console.log(item))
 // {key: 4, value: 30}
 ```
 
-### push
+### push *改变原数组*
 `将一个或多个元素添加到数组的末尾，并返回新数组的长度`
 ```javascript
 const arr = [5, 17, 6, 8]
@@ -132,6 +132,32 @@ kvArr.map(item => {return item.key}).join(',')
 
 ### reduce
 `从左到右为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。`
+```javascript
+// 上次写的一个综合性的应用,从数组中取出所有的businessType并且去重
+const shopInfo = [{
+  shopName: '111',
+  businessType: '1'
+}, {
+  shopName: '222',
+  businessType: '2'
+}, {
+   shopName: '333',
+   businessType: '2'
+ }]
+const businessTypeList = [...new Set(shopInfo.map(item => item.businessType).reduce((x, y) => x.concat(y)))]
+```
+
+### Object.assign()
+`ES6中提供了Object.assign() ，用于合并/复制对象的属性。`
+
+```javascript
+const obj1 = {z: z}
+const saveArgs = Object.assign({}, obj1, {
+  x: x,
+  y: y
+})
+ // 花括号叫目标对象，后面的obj1等等是源对象。对象合并是指：将源对象里面的属性添加到目标对象中去，若两者的属性名有冲突，后面的将会覆盖前面的
+```
 
 ---
 ### 数组去重
@@ -148,7 +174,7 @@ Array.from(new Set(kvArr.map(item => item.key)))
 ```
 * 第二种方法
 
-```jsx
+```javascript
 // 定义一个空数组 let ret = []
 // include判断是否包含元素
 // push 如果不包含,则push到ret
@@ -189,12 +215,22 @@ sum(1, true, 'a', 'D', 1, 'F', 1, 'w')
 ```
 
 ### 数组排序
-* 可以用sort()方法
+* 可以用sort()方法 *改变原数组*
 > 需要注意的是：sort()方法默认排序顺序是根据字符串Unicode码点。所以需要用函数表达式来实现数组的排序
 
 ```javascript
 [2,51,11,62,91,4,4,444,33,5].sort((x,y) => x-y)
 // [2, 4, 4, 5, 11, 33, 51, 62, 91, 444]
+
+// sort也可以根据数组对象中的某一个字段排序
+const obj = [{
+  position: '4'
+},{
+  position: '2'
+},{
+   position: '1'
+}]
+obj.sort((x, y) => x.position - y.position)
 ```
 
 
