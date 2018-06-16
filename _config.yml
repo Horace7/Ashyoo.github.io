@@ -13,10 +13,10 @@ nav:
   tags: '/tags.html'
 
 # Author 配置博主信息
-author: '酥东坡er'
-nickname: '酥东坡er'
-bio: '不敢高声语,恐惊天上人<br>前端路上,加油'
-avatar: '/assets/img/head1.jpeg'
+author: 'Mr Shit'
+nickname: 'Mr Shit'
+bio: '三月的风,四月的雨<br>不落的太阳和最好的你'
+avatar: '/assets/img/header3.jpg'
 
 # Search
 search: true
