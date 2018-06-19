@@ -59,7 +59,18 @@ arr.every(e => { return  e > 9 }) // false
 const arr = [5, 17, 6, 8]
 
 // 可以过滤出想要的元素再进行操作
-arr.concat(arr1).filter(e => {return e > 7}) // [17, 8]
+arr.concat(arr1).filter(e =>  e > 7) // [17, 8]
+
+const arr1 = [ 'name1', 'name2', 'name3', 'name2' ]
+
+// filter 可以接收3个参数 第一个参数表示数组中的元素,另外两个参数表示元素的位置和数组本身
+// 利用这3个参数,可以进行数组去重
+arr.filter((item, index, self) => {
+  // indexOf 总是返回第一个元素的位置 后续的重复元素位置与indexOf返回的位置不相等，因此被filter滤掉了。
+  return self.indexOf(item) === index
+})
+
+// [ 'name1', 'name2', 'name3' ]
 ```
 
 ### map
