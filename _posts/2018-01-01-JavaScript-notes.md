@@ -120,8 +120,10 @@ altwrite.bind(document)("hello")
 ```
 
 ## 闭包
+
 ## 继承
 * call和apply的继承
+`a.call(b,arg1,...) 说白了就是将a对象的方法加给b对象`
 
 ```js
 function GirlFriend(name, from) {
@@ -151,5 +153,34 @@ fack.alertName();//Black Widow
 fack.alertFrom();//China
 fack.alertAge();//18
 
+```
+
+
+### 普通事件与绑定事件的区别
+
+`普通事件只支持单个事件，而事件绑定可以添加多个事件`
+
+```html
+<button id="btn"></button>
+<script type="text/javascript">
+    var btn=document.getElementById("btn");
+    // 普通事件:
+    btn.onclick=function(){
+        alert("普通事件1");
+    }// 不执行
+    
+    btn.onclick=function(){
+        alert("普通事件2");
+    } // 执行
+
+    // 绑定事件:
+    btn.addEventListener('click',function(){
+        alert("绑定事件1");
+    },false); // 执行
+
+    btn.addEventListener('click',function(){
+        alert("绑定事件2");
+    },false); // 执行
+</script>
 ```
 

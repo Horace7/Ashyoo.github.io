@@ -35,6 +35,39 @@ arr.concat(arr1)
 value.replace(/[^/x00-\xff]/g, '**').length > 20
 ```
 
+### splice
+`splice 通过删除现有元素和/或添加新元素来更改一个数组的内容。`
+```javascript
+// splice可接收多个参数。第一个参数表示数组起始位置，第二个参数表示需要删除元素的个数
+// 如果后面还有参数，则将随后的全部参数插入到第一个参数表示的起始位置。
+
+[1,2,3,4,5].splice(3,1,"test1","test2") // [4] 返回被删除的元素组成的数组
+
+// 此句代码表示从arr数组的第3个元素开始，删除随后1个元素，并将“test1”和“test2”插入到第3个元素之后。
+```
+
+### split
+`split 使用指定的分隔符字符串将一个String对象分割成 字符串数组`
+
+### substr
+`substr 返回一个字符串中从指定位置开始到指定字符数的字符。`
+> 接受两个参数 substr(start, length)
+> 第一个参数表示开始位置的下标,第二个参数(可选)表示提取的字符数
+
+```js
+(function parseQueryString(url) {
+  var json = {};
+  var arr = url.substr(url.indexOf('?') + 1).split('&');
+  // [key0 = 0, key1 = 1, key2 = 2]
+  arr.forEach(function(item) {
+    var tmp = item.split('=');
+    json[tmp[0]] = tmp[1];
+  })
+  console.log(json) // {key0: "0", key1: "1", key2: "2"}
+  return json;
+}) ('http://shihaoran.top/index.html?key0=0&key1=1&key2=2')
+```
+
 ### some
 `匹配数组中每一个元素,如果有一个元素通过由提供的函数实现的测试,则立刻返回true,否则返回false`
 
@@ -171,6 +204,7 @@ const saveArgs = Object.assign({}, obj1, {
 ```
 
 ---
+
 ### 数组去重
 
 * 第一种方法
@@ -225,6 +259,14 @@ sum(1, true, 'a', 'D', 1, 'F', 1, 'w')
 // 4
 ```
 
+### 数组转对象
+* 可以用Object.keys
+```javascript
+const obj = { a: 1, b: 2 }
+
+Object.keys(obj).map(key => { return { key: key, value: obj[key] }})
+```
+
 ### 数组排序
 * 可以用sort()方法 *改变原数组*
 > 需要注意的是：sort()方法默认排序顺序是根据字符串Unicode码点。所以需要用函数表达式来实现数组的排序
@@ -237,11 +279,13 @@ sum(1, true, 'a', 'D', 1, 'F', 1, 'w')
 const obj = [{
   position: '4'
 },{
-  position: '2'
+  position: '999'
 },{
    position: '1'
 }]
 obj.sort((x, y) => x.position - y.position)
+
+// [{ position: '1' }, { position: '4' }, { position: '999' }]
 ```
 
 
