@@ -59,6 +59,8 @@ alert(x) // 20
 
 * 作为对象方法的this 指向调用的对象
 
+* 可以说this指向的永远是个对象, 不是调用时或者定义时的对象, 就是window
+
 ```js
 var obj = {
     props: 99,
@@ -68,6 +70,21 @@ var obj = {
 };
 
 console.log(obj.func()); // 99
+
+// -------------------再来一个-------------------------//
+var obj1 = {
+    bar: function() {
+        return this.baz
+    },
+    baz: 1
+}
+
+(function(){
+    console.log(typeof arguments[0]()) // undefined
+})(obj1.bar)
+
+// 注意调用obj1.bar的是arguments,所以this是指向arguments的
+// 如果在传参的时候调用obj1.bar()的话,则会输出 number
 ```
 * 构造函数中的this
 
