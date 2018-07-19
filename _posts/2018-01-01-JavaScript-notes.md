@@ -118,8 +118,26 @@ altwrite("hello");
 //正确方法是
 altwrite.bind(document)("hello")
 ```
-
 ## 闭包
+
+## 原型
+`prototype和__proto__ 略探一二`
+
+* prototype和__proto__的区别
+> prototype是函数才有的属性
+> __proto__是每个对象都有的属性
+
+```javascript
+    var a = {}
+    console.log(typeof a.prototype)  // undefined
+
+    var a1 = function(){}
+    console.log(typeof a1.prototype)  // object
+
+    var B = function(){}
+    var b = new B() 
+    console.log(typeof B.prototype)  // undefined
+```
 
 ## 继承
 * call和apply的继承
