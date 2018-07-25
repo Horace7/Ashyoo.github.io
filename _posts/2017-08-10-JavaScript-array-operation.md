@@ -259,8 +259,9 @@ sum(1, true, 'a', 'D', 1, 'F', 1, 'w')
 // 4
 ```
 
-### 数组转对象
+### 对象转数组
 * 可以用Object.keys
+
 ```javascript
 const obj = { a: 1, b: 2 }
 
