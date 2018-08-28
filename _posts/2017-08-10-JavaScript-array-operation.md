@@ -49,6 +49,14 @@ value.replace(/[^/x00-\xff]/g, '**').length > 20
 ### split
 `split 使用指定的分隔符字符串将一个String对象分割成 字符串数组`
 
+```js
+// 简单点 
+'abcdef'.split('') // ["a", "b", "c", "d", "e", "f"] 
+
+// 字符串翻转
+'abcdef'.split('').reverse().join('') // fedcba
+```
+
 ### substr
 `substr 返回一个字符串中从指定位置开始到指定字符数的字符。`
 > 接受两个参数 substr(start, length)
