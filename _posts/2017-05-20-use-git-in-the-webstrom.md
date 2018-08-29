@@ -15,7 +15,7 @@ catalog: true
 
 ---
 > 引用阮一峰大神的一张图
-![bg2014061202.jpg](http://upload-images.jianshu.io/upload_images/7237693-5156e7a0ca49a99c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7237693-5156e7a0ca49a99c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * commit 提交改变到本地仓库
 * push 推送到远程分仓库
