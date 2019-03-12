@@ -256,7 +256,7 @@ ret.map(a => {
 但是类数组对🐘无法继承自Array.prototype,所以可以通过Function.call间接地调用。
 
 ```js
-// arguments对象 包含传递给函数的每个参数
+// arguments对象 包含传递给函数的每个参数 (箭头函数中没有arguments对象)
 // call的第一个参数表示真正调用reduce的环境变为了arguments对象
 // 也就是reduce方法中的this是指向arguments的。所以就好像arguments也具有了数组的方法。
 // 能调用call的只有方法，所以不能用[].call这种形式，得用[].reduce.call
