@@ -36,14 +36,36 @@ value.replace(/[^/x00-\xff]/g, '**').length > 20
 ```
 
 ### splice
-`splice 通过删除现有元素和/或添加新元素来更改一个数组的内容。`
+`arr.splice() 方法可以说是数组界的瑞士军刀。它可以做所有事情：添加，删除和插入元素。`
 ```javascript
 // splice可接收多个参数。第一个参数表示数组起始位置，第二个参数表示需要删除元素的个数
 // 如果后面还有参数，则将随后的全部参数插入到第一个参数表示的起始位置。
 
-[1,2,3,4,5].splice(3,1,"test1","test2") // [4] 返回被删除的元素组成的数组
+// 先从删除开始
+var arr = ["I", "study", "JavaScript"];
 
-// 此句代码表示从arr数组的第3个元素开始，删除随后1个元素，并将“test1”和“test2”插入到第3个元素之后。
+arr.splice(1, 1); // from index 1 remove 1 element
+
+alert( arr ); // ["I", "JavaScript"]
+
+// 删除 3 个元素，并用另外两个元素替换它们：
+var arr = ["I", "study", "JavaScript", "right", "now"];
+
+// remove 3 first elements and replace them with another
+arr.splice(0, 3, "Let's", "dance");
+
+alert( arr ) // now ["Let's", "dance", "right", "now"]
+
+// 可以将第二个参数 deleteCount 设置为 0, 就能够插入元素而不用删除
+var arr = ["I", "study", "JavaScript"];
+
+// from index 2
+// delete 0
+// then insert "complex" and "language"
+arr.splice(2, 0, "complex", "language");
+
+alert( arr ); // "I", "study", "complex", "language", "JavaScript"
+
 ```
 
 ### split
