@@ -68,6 +68,21 @@ alert( arr ); // "I", "study", "complex", "language", "JavaScript"
 
 ```
 
+### slice
+`它从所有元素的开始索引 "start" 复制到 "end" (不包括 "end") 返回一个新的数组。`
+```javascript
+// start 和 end 都可以是负数，在这种情况下，从末尾计算索引。
+// 它和字符串的 str.slice 有点像，就是把子字符串替换成子数组。
+var str = "test";
+var arr = ["t", "e", "s", "t"];
+
+alert( str.slice(1, 3) ); // es
+alert( arr.slice(1, 3) ); // e,s
+
+alert( str.slice(-2) ); // st
+alert( arr.slice(-2) ); // s,t
+```
+
 ### split
 `split 使用指定的分隔符字符串将一个String对象分割成 字符串数组`
 
@@ -183,6 +198,7 @@ arr.push(4) // 5
 ###  includes
 `方法用来判断一个数组是否包含一个指定的值,返回 true或 false`
 ```javascript
+// includes 可以接收第二个参数, arr.includes(item, from) — 从索引 from 查询 item，如果找到则返回 true。
 const arr = [5, 17, 6, 8]
 
 arr.includes(5) true

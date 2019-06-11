@@ -219,3 +219,7 @@ fack.alertAge();//18
 </script>
 ```
 
+### 一篇对事件委托的文章
+
+* https://zh.javascript.info/event-delegation
+
