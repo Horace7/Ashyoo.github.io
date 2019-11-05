@@ -225,9 +225,10 @@ kvArr.map(item => {return item.key}).join(',')
 
 ```javascript
 // 上次写的一个综合性的应用,从数组中取出所有的businessType并且去重
+// 需要注意的是，string也有concat方法，所以这里需要用到reduce的第二个参数，initialValue(作为第一次调用 callback 的第一个参数。) 传[]
 const shopInfo = [{
   shopName: '111',
-  businessType: '1'
+  businessType: '1's
 }, {
   shopName: '222',
   businessType: '2'
@@ -235,7 +236,7 @@ const shopInfo = [{
    shopName: '333',
    businessType: '2'
  }]
-const businessTypeList = [...new Set(shopInfo.map(item => item.businessType).reduce((x, y) => x.concat(y)))]
+const businessTypeList = [...new Set(shopInfo.map(item => item.businessType).reduce((x, y) => x.concat(y), []))]
 ```
 
 ### Object.assign()
